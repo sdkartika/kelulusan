@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pengumuman Kelulusan SD Kartika I-4 Pematangsiantar</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f8f9fa;
+        }
+        
+        .army-green-bg {
+            background-color: #4b5320;
+        }
+        
+        .army-green-text {
+            color: #4b5320;
+        }
+        
+        .army-green-border {
+            border-color: #4b5320;
+        }
+        
+        .army-green-hover:hover {
+            background-color: #3a4410;
+        }
+        
+        .fade-in {
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .gradient-text {
+            background: linear-gradient(90deg, #4b5320, #6b8e23);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col">
+    <!-- Header -->
+    <header class="army-green-bg text-white py-4 shadow-md">
+        <div class="container mx-auto px-4">
+            <h1 class="text-2xl md:text-3xl font-bold text-center">SD KARTIKA I-4 PEMATANGSIANTAR</h1>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-grow container mx-auto px-4 py-8">
+        <!-- Announcement Page -->
+        <div id="announcementPage" class="max-w-4xl mx-auto bg-white rounded-lg shadow-lg overflow-hidden fade-in">
+            <div class="army-green-bg py-3 px-6">
+                <h2 class="text-xl md:text-2xl font-bold text-white text-center">PENGUMUMAN KELULUSAN</h2>
+                <p class="text-white text-center">TAHUN AJARAN 2024/2025</p>
+            </div>
+            
+            <div class="p-6 md:p-8">
+                <div class="mb-8">
+                    <h3 class="text-lg font-semibold army-green-text mb-4">SAMBUTAN KEPALA SEKOLAH</h3>
+                    <div class="border-l-4 army-green-border pl-4">
+                      <p class="text-gray-700 mb-4">Assalamu'alaikum Wr. Wb..</p>
+                        <p class="text-gray-700 mb-4">Kepada seluruh siswa kelas VI SD KARTIKA I-4 Pematangsiantar, saya mengucapkan selamat atas kelulusan yang telah kalian raih. Pencapaian ini merupakan hasil dari kerja keras, ketekunan, dan semangat belajar yang telah kalian tunjukkan selama menempuh pendidikan di sekolah kita.</p>
+                        <p class="text-gray-700 mb-4">Kelulusan ini bukanlah akhir dari perjalanan pendidikan, melainkan awal dari petualangan baru yang lebih menantang. Jadikan ilmu yang telah kalian peroleh sebagai bekal untuk meraih cita-cita yang lebih tinggi. Tetaplah menjaga semangat belajar, disiplin, dan karakter baik yang telah ditanamkan selama di SD KARTIKA I-4 Pematangsiantar.</p>
+                        <p class="text-gray-700 mb-4">Kepada orang tua dan wali murid, terima kasih atas kepercayaan, dukungan, dan kerja sama yang telah diberikan kepada sekolah. Keberhasilan anak-anak kita merupakan hasil dari sinergi antara sekolah dan keluarga.</p>
+                        <p class="text-gray-700 mb-4">Selamat melanjutkan ke jenjang pendidikan yang lebih tinggi. Semoga sukses selalu menyertai langkah kalian.</p>
+                        <p class="text-gray-700">Wassalamu'alaikum Wr. Wb..</p>
+                    </div>
+                    <div class="mt-6 text-right">
+                        <p class="font-semibold army-green-text">Rinda Salviah, S.Pd.</p>
+                        <p class="text-gray-600">Kepala Sekolah</p>
+                    </div>
+                </div>
+                
+                <div class="text-center mt-10">
+                    <button id="checkGraduationBtn" class="army-green-bg text-white px-6 py-2 rounded-md font-medium hover:bg-opacity-90 transition duration-300 army-green-hover">
+                        CEK KELULUSAN
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Graduation Check Page -->
+        <div id="graduationCheckPage" class="max-w-4xl mx-auto bg-white rounded-lg shadow-lg overflow-hidden hidden fade-in">
+            <div class="army-green-bg py-3 px-6">
+                <h2 class="text-xl md:text-2xl font-bold text-white text-center">CEK KELULUSAN SISWA</h2>
+                <p class="text-white text-center">TAHUN AJARAN 2024/2025</p>
+            </div>
+            
+            <div class="p-6 md:p-8">
+                <div class="mb-6">
+                    <div class="flex flex-col md:flex-row gap-4">
+                        <input type="text" id="nisnInput" placeholder="Masukkan NISN" class="flex-grow px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-700">
+                        <button id="searchBtn" class="army-green-bg text-white px-6 py-2 rounded-md font-medium hover:bg-opacity-90 transition duration-300 army-green-hover">
+                            Cari
+                        </button>
+                    </div>
+                    <p class="text-sm text-gray-500 mt-2">Masukkan NISN siswa untuk mengecek kelulusan</p>
+                </div>
+                
+                <div id="resultContainer" class="hidden">
+                    <div class="border army-green-border rounded-md p-4">
+                        <h3 class="text-lg font-semibold army-green-text mb-4">HASIL PENCARIAN</h3>
+                        <div id="studentResult" class="space-y-2"></div>
+                    </div>
+                </div>
+                
+                <div id="adminResult" class="hidden">
+                    <div class="border army-green-border rounded-md p-4">
+                        <h3 class="text-lg font-semibold army-green-text mb-4">DAFTAR KELULUSAN SISWA</h3>
+                        <div class="overflow-x-auto">
+                            <table class="min-w-full divide-y divide-gray-200">
+                                <thead class="army-green-bg">
+                                    <tr>
+                                        <th class="px-6 py-3 text-left text-xs font-medium text-white uppercase tracking-wider">NISN</th>
+                                        <th class="px-6 py-3 text-left text-xs font-medium text-white uppercase tracking-wider">Nama</th>
+                                        <th class="px-6 py-3 text-left text-xs font-medium text-white uppercase tracking-wider">Status</th>
+                                        <th class="px-6 py-3 text-left text-xs font-medium text-white uppercase tracking-wider">Kelas</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="adminStudentList" class="bg-white divide-y divide-gray-200">
+                                    <!-- Student data will be inserted here -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="notAvailableYet" class="hidden text-center py-8">
+                    <div class="army-green-bg text-white rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold army-green-text mb-2">Pengumuman Belum Dimulai</h3>
+                    <p class="text-gray-600">Pengumuman kelulusan akan dibuka pada tanggal 02 Mei 2025 pukul 08.00 WIB.</p>
+                    <p class="text-gray-600">Silakan kembali pada waktu yang telah ditentukan.</p>
+                </div>
+                
+                <div class="text-center mt-6">
+                    <button id="backToAnnouncementBtn" class="text-gray-600 hover:text-gray-800 flex items-center justify-center mx-auto">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+                        </svg>
+                        Kembali ke Pengumuman
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="army-green-bg text-white py-4">
+        <div class="container mx-auto px-4 text-center">
+            <p>&copy; 2025 SD Kartika I-4 Pematangsiantar. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Student data
+        const students = [
+            { nisn: "0125250530", nama: "ALESANA ARKA RUSSHELL", status: "LULUS", kelas: "VI" },
+            { nisn: "3122067092", nama: "ANANDA BAGUS WIGUNA", status: "LULUS", kelas: "VI" },
+            { nisn: "0134471716", nama: "ATTHAYA KHANZA SYAPUTRI", status: "LULUS", kelas: "VI" },
+            { nisn: "3138776330", nama: "Cinta Putri Kinara", status: "LULUS", kelas: "VI" },
+            { nisn: "0133122694", nama: "DWI NAURA NADIVA", status: "LULUS", kelas: "VI" },
+            { nisn: "3134773761", nama: "FATUR ARRAHMAN SIREGAR", status: "LULUS", kelas: "VI" },
+            { nisn: "3133585632", nama: "IKHSAN RAMADHAN", status: "LULUS", kelas: "VI" },
+            { nisn: "3134540138", nama: "ILFAN SYAHPUTRA", status: "LULUS", kelas: "VI" },
+            { nisn: "3139234753", nama: "KAILYN SASKIA TANISYAH", status: "LULUS", kelas: "VI" },
+            { nisn: "3128802846", nama: "MASAYU ZAYYAN SESA", status: "LULUS", kelas: "VI" },
+            { nisn: "3133586853", nama: "MUHAMMAD ANUGRAH REIZKY", status: "LULUS", kelas: "VI" },
+            { nisn: "3137644339", nama: "MUHAMMAD ARDHI ALKHALIFI", status: "LULUS", kelas: "VI" },
+            { nisn: "0129861681", nama: "MUHAMMAD PARSA HAZIRAH RANGKUTI", status: "LULUS", kelas: "VI" },
+            { nisn: "3134027567", nama: "MUHAMMAD QAISAR MAHDI", status: "LULUS", kelas: "VI" },
+            { nisn: "3133181334", nama: "MUHAMMAD SATRIO DANISWARA NUGROHO", status: "LULUS", kelas: "VI" },
+            { nisn: "3138409277", nama: "NAZILLA SUCI RAMADANI", status: "LULUS", kelas: "VI" },
+            { nisn: "3136398699", nama: "RAFIQ ZIKRI DAMANIK", status: "LULUS", kelas: "VI" },
+            { nisn: "3137919781", nama: "RAYHAN BAIHAKI", status: "LULUS", kelas: "VI" },
+            { nisn: "3136963440", nama: "RINDIANY", status: "LULUS", kelas: "VI" },
+            { nisn: "0136046667", nama: "RIZA AL FARUQ", status: "LULUS", kelas: "VI" },
+            { nisn: "3139382100", nama: "RIZKI AKHIR RAMADHAN", status: "LULUS", kelas: "VI" },
+            { nisn: "3131193640", nama: "SALWAH ANGGUN FITRIANY", status: "LULUS", kelas: "VI" },
+            { nisn: "3131180810", nama: "SOPHIA MUTIARA SIMATUPANG", status: "LULUS", kelas: "VI" },
+            { nisn: "3127116460", nama: "TIFA FATIHA VALENCIA", status: "LULUS", kelas: "VI" },
+            { nisn: "3126237392", nama: "VIOLA PUTRI RAMADHANI", status: "LULUS", kelas: "VI" },
+            { nisn: "0135378131", nama: "YARFA HAMZI MIRZA AULIA", status: "LULUS", kelas: "VI" },
+            { nisn: "3133834679", nama: "YUMNA YUFNI AL BAHA SIMAMORA", status: "LULUS", kelas: "VI" }
+        ];
+
+        // DOM elements
+        const announcementPage = document.getElementById('announcementPage');
+        const graduationCheckPage = document.getElementById('graduationCheckPage');
+        const checkGraduationBtn = document.getElementById('checkGraduationBtn');
+        const backToAnnouncementBtn = document.getElementById('backToAnnouncementBtn');
+        const nisnInput = document.getElementById('nisnInput');
+        const searchBtn = document.getElementById('searchBtn');
+        const resultContainer = document.getElementById('resultContainer');
+        const studentResult = document.getElementById('studentResult');
+        const adminResult = document.getElementById('adminResult');
+        const adminStudentList = document.getElementById('adminStudentList');
+        const notAvailableYet = document.getElementById('notAvailableYet');
+
+        // Check if announcement is available (after May 2, 2025 08:00 WIB)
+        const announcementDate = new Date('May 2, 2025 08:00:00 GMT+0700');
+        const isAnnouncementAvailable = new Date() >= announcementDate;
+
+        // Event listeners
+        checkGraduationBtn.addEventListener('click', () => {
+            announcementPage.classList.add('hidden');
+            graduationCheckPage.classList.remove('hidden');
+            
+            if (!isAnnouncementAvailable) {
+                notAvailableYet.classList.remove('hidden');
+                resultContainer.classList.add('hidden');
+                adminResult.classList.add('hidden');
+            }
+        });
+
+        backToAnnouncementBtn.addEventListener('click', () => {
+            graduationCheckPage.classList.add('hidden');
+            announcementPage.classList.remove('hidden');
+            resetSearch();
+        });
+
+        searchBtn.addEventListener('click', searchStudent);
+        nisnInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') searchStudent();
+        });
+
+        // Functions
+        function searchStudent() {
+            if (!isAnnouncementAvailable) return;
+            
+            const input = nisnInput.value.trim();
+            
+            if (input.toLowerCase() === 'admin') {
+                // Show all students for admin
+                displayAllStudents();
+                resultContainer.classList.add('hidden');
+                adminResult.classList.remove('hidden');
+                notAvailableYet.classList.add('hidden');
+            } else {
+                // Search by NISN
+                const student = students.find(s => s.nisn === input);
+                
+                if (student) {
+                    displayStudentResult(student);
+                    resultContainer.classList.remove('hidden');
+                    adminResult.classList.add('hidden');
+                    notAvailableYet.classList.add('hidden');
+                } else {
+                    studentResult.innerHTML = `
+                        <div class="text-center py-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-gray-400 mx-auto mb-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                            <p class="text-gray-600">Data siswa dengan NISN ${input} tidak ditemukan.</p>
+                            <p class="text-gray-500 text-sm">Silakan periksa kembali NISN yang dimasukkan.</p>
+                        </div>
+                    `;
+                    resultContainer.classList.remove('hidden');
+                    adminResult.classList.add('hidden');
+                    notAvailableYet.classList.add('hidden');
+                }
+            }
+        }
+
+        function displayStudentResult(student) {
+            studentResult.innerHTML = `
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="font-medium">NISN</div>
+                    <div>${student.nisn}</div>
+                    
+                    <div class="font-medium">Nama</div>
+                    <div>${student.nama}</div>
+                    
+                    <div class="font-medium">Status</div>
+                    <div class="font-bold ${student.status === 'LULUS' ? 'text-green-600' : 'text-red-600'}">${student.status}</div>
+                    
+                    <div class="font-medium">Kelas</div>
+                    <div>${student.kelas}</div>
+                </div>
+                
+                <div class="mt-6 text-center">
+                    <div class="inline-flex items-center px-4 py-2 rounded-md ${student.status === 'LULUS' ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'}">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                        </svg>
+                        ${student.status === 'LULUS' ? 'Selamat! Anda dinyatakan LULUS' : 'Maaf, Anda dinyatakan TIDAK LULUS'}
+                    </div>
+                </div>
+            `;
+        }
+
+        function displayAllStudents() {
+            adminStudentList.innerHTML = '';
+            
+            students.forEach(student => {
+                const row = document.createElement('tr');
+                row.className = 'hover:bg-gray-50';
+                row.innerHTML = `
+                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">${student.nisn}</td>
+                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">${student.nama}</td>
+                    <td class="px-6 py-4 whitespace-nowrap text-sm ${student.status === 'LULUS' ? 'text-green-600 font-bold' : 'text-red-600 font-bold'}">${student.status}</td>
+                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">${student.kelas}</td>
+                `;
+                adminStudentList.appendChild(row);
+            });
+        }
+
+        function resetSearch() {
+            nisnInput.value = '';
+            resultContainer.classList.add('hidden');
+            adminResult.classList.add('hidden');
+            notAvailableYet.classList.add('hidden');
+        }
+    </script>
+</body>
+</html>
