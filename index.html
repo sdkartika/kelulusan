@@ -60,7 +60,7 @@
         <div id="announcementPage" class="max-w-4xl mx-auto bg-white rounded-lg shadow-lg overflow-hidden fade-in">
             <div class="army-green-bg py-3 px-6">
                 <h2 class="text-xl md:text-2xl font-bold text-white text-center">PENGUMUMAN KELULUSAN</h2>
-                <p class="text-white text-center">TAHUN AJARAN 2024/2025</p>
+                <p class="text-white text-center">TAHUN AJARAN 2025/2026</p>
             </div>
             
             <div class="p-6 md:p-8">
@@ -92,7 +92,7 @@
         <div id="graduationCheckPage" class="max-w-4xl mx-auto bg-white rounded-lg shadow-lg overflow-hidden hidden fade-in">
             <div class="army-green-bg py-3 px-6">
                 <h2 class="text-xl md:text-2xl font-bold text-white text-center">CEK KELULUSAN SISWA</h2>
-                <p class="text-white text-center">TAHUN AJARAN 2024/2025</p>
+                <p class="text-white text-center">TAHUN AJARAN 2025/2026</p>
             </div>
             
             <div class="p-6 md:p-8">
@@ -141,7 +141,7 @@
                         </svg>
                     </div>
                     <h3 class="text-xl font-semibold army-green-text mb-2">Pengumuman Belum Dimulai</h3>
-                    <p class="text-gray-600">Pengumuman kelulusan akan dibuka pada tanggal 02 Juni 2025 pukul 14.00 WIB.</p>
+                    <p class="text-gray-600">Pengumuman kelulusan akan dibuka pada tanggal 02 Juni 2025 pukul 11.00 WIB.</p>
                     <p class="text-gray-600">Silakan kembali pada waktu yang telah ditentukan.</p>
                 </div>
                 
@@ -206,8 +206,8 @@
         const adminStudentList = document.getElementById('adminStudentList');
         const notAvailableYet = document.getElementById('notAvailableYet');
 
-        // Check if announcement is available (after June 2, 2025 14:00 WIB)
-        const announcementDate = new Date('June 2, 2025 14:00:00 GMT+0700');
+        // Check if announcement is available (after June 2, 2026 11:00 WIB)
+        const announcementDate = new Date('June 2, 2026 11:00:00 GMT+0700');
         const isAnnouncementAvailable = new Date() >= announcementDate;
 
         // Event listeners
@@ -292,7 +292,7 @@
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
                         </svg>
-                        ${student.status === 'LULUS' ? 'Berdasarkan SK Penetapan Kelulusan SD KARTIKA I-4 dari hasil rapat dewan guru nomor 878/053/SDK.032/SK-KELULUSAN/V/2025, Selamat! Anda dinyatakan LULUS, ' : 'Berdasarkan SK Penetapan Kelulusan SD KARTIKA I-4 dari hasil rapat dewan guru nomor 878/053/SDK.032/SK-KELULUSAN/V/2025, Maaf...Anda dinyatakan TIDAK LULUS'}
+                        ${student.status === 'LULUS' ? 'Berdasarkan SK Penetapan Kelulusan SD KARTIKA I-4 dari hasil rapat dewan guru nomor 878/088/SDK.032/SK-KELULUSAN/VI/2026, Selamat! Anda dinyatakan LULUS, ' : 'Berdasarkan SK Penetapan Kelulusan SD KARTIKA I-4 dari hasil rapat dewan guru nomor 878/088/SDK.032/SK-KELULUSAN/VI/2026, Maaf...Anda dinyatakan TIDAK LULUS'}
                     </div>
                 </div>
             `;
